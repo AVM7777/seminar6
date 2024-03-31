@@ -8,7 +8,7 @@
 20
 */
 
-static char[] StringToCharArray(string str)
+static char[] ArrayCharsToString(string str)
 {
     char[] array = new char[str.Length];
 
@@ -20,4 +20,22 @@ static char[] StringToCharArray(string str)
     return array;
 }
 
-System.Console.WriteLine(StringToCharArray("Hello!"));
+void PrintArray(char[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1)
+        {
+            Console.Write($"'{array[i]}', ");
+        }
+        else
+        {
+            Console.Write($"'{array[i]}' ");
+        }
+
+    }
+    Console.WriteLine("]");
+}
+
+PrintArray(ArrayCharsToString("Hello!"));
